@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Создать резюме | Джуманджи</title>
+  <title>Create CV | Senior</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
@@ -16,14 +16,14 @@
 <body>
   <header class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand mr-4 font-weight-bold" href="{% url 'main' %}">Джуманджи</a>
+      <a class="navbar-brand mr-4 font-weight-bold" href="{% url 'main' %}">Senior</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav col-10">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="{% url 'vacancies' %}">Вакансии</a>
+            <a class="nav-link text-dark" href="{% url 'vacancies' %}">Vacancies</a>
           </li>
 
         </ul>
@@ -34,10 +34,10 @@
                 {{ user.username }}
               </button>
               <div class="dropdown-menu dropdown-menu-right mt-3">
-                <a href="#" class="dropdown-item py-2">Профиль</a>
-                <a href="{% url 'resume_edit' %}" class="dropdown-item py-2">Резюме</a>
-                <a href="{% url 'company_edit' %}" class="dropdown-item py-2">Компания</a>
-                <a href="/logout/" class="dropdown-item py-2">Выйти</a>
+                <a href="#" class="dropdown-item py-2">Profile</a>
+                <a href="{% url 'resume_edit' %}" class="dropdown-item py-2">Curriculum vitae</a>
+                <a href="{% url 'company_edit' %}" class="dropdown-item py-2">Company</a>
+                <a href="/logout/" class="dropdown-item py-2">Logout</a>
               </div>
             </div>
           </li>
@@ -49,9 +49,9 @@
   <main class="container mt-3 pb-5">
     <section class="col-12 col-lg-6 offset-lg-3 mt-5 card">
       <div class="card-body px-3 pb-4">
-        <h1 class="h4 pt-2">Мое резюме</h1>
-        <p class="mt-2">У вас нет резюме. Хотите создать его?</p>
-        <a href="{% url 'resume_create' %}" class="btn btn-info mb-2">Создать резюме</a>
+        <h1 class="h4 pt-2">My CV</h1>
+        <p class="mt-2">You don't have a CV. Would you like to create one?</p>
+        <a href="{% url 'resume_create' %}" class="btn btn-info mb-2">Create CV</a>
       </div>
     </section>
   </main>

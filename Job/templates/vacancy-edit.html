@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Вакансии компании | Джуманджи</title>
+  <title>Company vacancies | Senior</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
@@ -21,12 +21,12 @@
             <!-- Tab -->
             <section>
               <h2 class="h4 pt-2 pb-3">Backend Middle/Senior</h2>
-              <p class="alert alert-info" role="alert">Вакансия обновлена</p>
+              <p class="alert alert-info" role="alert">Vacancy updated</p>
                   {% load crispy_forms_tags %}
                   {% crispy form form.helper %}
               <!-- END Vacancy info -->
               <!-- Applications -->
-              <h2 class="h4 pt-2 pb-3">Количкство откликов: {{ applications.count }}</h2>
+              <h2 class="h4 pt-2 pb-3">Number of applications: {{ applications.count }}</h2>
               {% for application in applications %}
               <div class="card mt-3">
                 <div class="card-body px-4">

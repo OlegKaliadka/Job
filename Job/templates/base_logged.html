@@ -1,14 +1,14 @@
 <body>
   <header class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand mr-4 font-weight-bold" href="{% url 'main' %}">Джуманджи</a>
+      <a class="navbar-brand mr-4 font-weight-bold" href="{% url 'main' %}">Senior</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav col-10">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="{% url 'vacancies' %}">Вакансии</a>
+            <a class="nav-link text-dark" href="{% url 'vacancies' %}">Vacancies</a>
           </li>
 
         </ul>
@@ -19,10 +19,10 @@
                 {{ user.username }}
               </button>
               <div class="dropdown-menu dropdown-menu-right mt-3">
-                <a href="#" class="dropdown-item py-2">Профиль</a>
-                <a href="{% url 'resume_edit' %}" class="dropdown-item py-2">Резюме</a>
-                <a href="{% url 'company_edit' %}" class="dropdown-item py-2">Компания</a>
-                <a href="/logout/" class="dropdown-item py-2">Выйти</a>
+                <a href="#" class="dropdown-item py-2">Profile</a>
+                <a href="{% url 'resume_edit' %}" class="dropdown-item py-2">Curriculum vitae</a>
+                <a href="{% url 'company_edit' %}" class="dropdown-item py-2">Company</a>
+                <a href="/logout/" class="dropdown-item py-2">Logout</a>
               </div>
             </div>
           </li>
@@ -35,10 +35,10 @@
     <div class="row mt-5">
       <div class="col-12 col-lg-4">
         <aside class="pt-3 pb-4 px-4 mb-5 card">
-          <h1 class="h4 pt-2 pb-2">Моя компания</h1>
+          <h1 class="h4 pt-2 pb-2">My company</h1>
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link" href="{% url 'company_edit' %}">1. Информация о&nbsp;компании</a>
-            <a class="nav-link active" href="{% url 'company_vacancies' %}">2. Вакансии</a>
+            <a class="nav-link" href="{% url 'company_edit' %}">1. Company information</a>
+            <a class="nav-link active" href="{% url 'company_vacancies' %}">2. Vacancies</a>
           </div>
         </aside>
       </div>
