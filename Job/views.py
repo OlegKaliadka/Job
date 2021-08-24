@@ -66,16 +66,23 @@ class ApplicationView(View):
 
     def post(self, request, vacancy):
         form = ApplicationForm(request.POST)
-        if form.is_valid():
-            data = form.cleaned_data
-            application = Application.objects.create(
-                written_username=data['written_username'],
-                written_phone=data['written_phone'],
-                written_cover_letter=data["written_cover_letter"],
-                vacancy=Vacancy.objects.get(id=vacancy),
-                user=request.user                                  # If User exist!!!
-            )
-            return render(request, 'send.html')
+        if request.user.is_authenticated:
+            if form.is_valid():
+                data = form.cleaned_data
+                vacancy = Vacancy.objects.get(id=vacancy)
+                application = Application.objects.create(
+                    written_username=data['written_username'],
+                    written_phone=data['written_phone'],
+                    written_cover_letter=data["written_cover_letter"],
+                    vacancy=vacancy,
+                    user=request.user                                  # If User exist!!!
+                )
+                context = {
+                    'vacancy': vacancy,
+                }
+                return render(request, 'send.html', context=context)
+        else:
+            return redirect('/login/')
         return render(request, 'vacancy.html', {'form': form})
 
 
