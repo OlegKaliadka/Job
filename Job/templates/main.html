@@ -36,7 +36,7 @@
             {% endif %}
             <div class="card-body">
               <p class="card-text mb-2">{{ specialty.title }}</p>
-              <p class="card-text"><a href="{% url 'vacancies_spec' specialty.code %}">{{ specialty.amount }} вакансий</a></p>
+              <p class="card-text"><a href="{% url 'vacancies_spec' specialty.code %}">{{ specialty.amount }} vacancies</a></p>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
             </a>
             <div class="card-body">
               <p class="card-text mb-2">{{ company.name }}</p>
-              <p class="card-text"><a href="{% url 'company' company.pk %}">{{ company.amount }} вакансий</a></p>
+              <p class="card-text"><a href="{% url 'company' company.pk %}">{{ company.amount }} vacancies</a></p>
             </div>
           </div>
         </div>
