@@ -290,3 +290,10 @@ def search_view(request):
         'search_query' : search_query,
     }
     return render(request, 'search.html', context=context)
+
+
+class ProfileView(View):
+
+    def get(self, request):
+        context = {}
+        return render(request, 'profile.html', context=context)

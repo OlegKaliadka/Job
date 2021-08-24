@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from Job.views import MainView, VacanciesView, VacanciesSpecView, CompanyView, ApplicationView, CompanyStartView, MyCompanyView, MyCompanyCreateView, CompanyVacanciesView, VacanciesCreateView, VacancyEditView, ResumeStartView, ResumeCreateView, ResumeView, search_view
+from Job.views import MainView, VacanciesView, VacanciesSpecView, CompanyView, ApplicationView, CompanyStartView, MyCompanyView, MyCompanyCreateView, CompanyVacanciesView, VacanciesCreateView, VacancyEditView, ResumeStartView, ResumeCreateView, ResumeView, search_view, ProfileView
 from Application.views import register
 from django.contrib.auth.views import LogoutView
 
@@ -31,6 +31,7 @@ urlpatterns = [
     path('myresume/create/send/', ResumeCreateView.as_view()),
     path('myresume/', ResumeView.as_view(), name='resume_edit'),
     path('search/', search_view, name='search'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
