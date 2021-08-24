@@ -20,9 +20,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'vacancies' %}">Vacancies</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'profile' %}">Profile</a>
           </li>
+          {% endif %}
 
         </ul>
         <ul class="navbar-nav col-2 justify-content-end">

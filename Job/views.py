@@ -12,14 +12,28 @@ def custom_handler404(request, exception):
     return HttpResponseNotFound('Что-то сломалось :(')
 
 
-class MainView(TemplateView):
-    template_name = 'main.html'
+#class MainView(TemplateView):
+#    template_name = 'main.html'
+#
+#    def get_context_data(self, request, **kwargs):
+#        context = super(MainView, self).get_context_data(**kwargs)
+#        context['specialties'] = Specialty.objects.values('code', 'title', 'picture').annotate(amount=Count('vacancies'))
+#        context['companies'] = Company.objects.values('pk', 'name', 'logo').annotate(amount=Count('vacancies'))
+#        context['user'] = request.user
+#        return context
 
-    def get_context_data(self, **kwargs):
-        context = super(MainView, self).get_context_data(**kwargs)
-        context['specialties'] = Specialty.objects.values('code', 'title', 'picture').annotate(amount=Count('vacancies'))
-        context['companies'] = Company.objects.values('pk', 'name', 'logo').annotate(amount=Count('vacancies'))
-        return context
+class MainView(View):
+
+    def get(self, request):
+        specialties = Specialty.objects.values('code', 'title', 'picture').annotate(amount=Count('vacancies'))
+        companies = Company.objects.values('pk', 'name', 'logo').annotate(amount=Count('vacancies'))
+        user = request.user
+        context = {
+            'specialties': specialties,
+            'companies': companies,
+            'user': user,
+        }
+        return render(request, 'main.html', context=context)
 
 
 class VacanciesView(TemplateView):
