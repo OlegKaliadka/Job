@@ -28,8 +28,10 @@
 
         </ul>
         <ul class="navbar-nav col-2 justify-content-end">
+          {% if not user.is_authenticated %}
           <li class="nav-item active">
             <a href="/login" class="nav-link font-weight-bold">Sign in</a>
+          {% endif %}
           </li>
         </ul>
       </div>

@@ -39,9 +39,9 @@
                 <div class="card-body px-4">
                   <div class="row align-items-center">
                     <div class="col-6 col-lg-8">
-                      <a class="mb-1">{{ vacancy.specialty.title }}</a>
+                      <p> <b>{{ vacancy.specialty.title }}:</b> {{ vacancy.title }}</p>
                       <p class="mb-1">
-                        <span class="mr-4">{{ vacancy.salary_max }}</span><a href="#" class="text-info">Number of applications: {{ vacancy.applications.count }}</a>
+                        <span class="mr-4">{{ vacancy.salary_max }}</span><a class="text-info">Number of applications: {{ vacancy.applications.count }}</a>
                       </p>
                     </div>
                     <div class="col-6 col-lg-4 text-right">
