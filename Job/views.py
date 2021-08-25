@@ -303,6 +303,8 @@ def search_view(request):
     return render(request, 'search.html', context=context)
 
 
+#def search_word_view(request, search_word):
+   # search_query = search_word
 class ProfileView(View):
 
     def get(self, request):
