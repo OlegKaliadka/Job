@@ -303,8 +303,16 @@ def search_view(request):
     return render(request, 'search.html', context=context)
 
 
-#def search_word_view(request, search_word):
-   # search_query = search_word
+def search_word_view(request, search_word):
+    search_query = search_word
+    posts = Vacancy.objects.filter(Q(title__icontains=search_query) | Q(skills__icontains=search_query))
+    context = {
+        'posts': posts,
+        'search_query': search_query,
+    }
+    return render(request, 'search.html', context=context)
+
+
 class ProfileView(View):
 
     def get(self, request):
