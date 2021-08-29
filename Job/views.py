@@ -15,8 +15,8 @@ def custom_handler404(request, exception):
 class MainView(View):
 
     def get(self, request):
-        specialties = Specialty.objects.values('code', 'title', 'picture').annotate(amount=Count('vacancies'))
-        companies = Company.objects.values('pk', 'name', 'logo').annotate(amount=Count('vacancies'))
+        specialties = Specialty.objects.all().annotate(amount=Count('vacancies'))
+        companies = Company.objects.all().annotate(amount=Count('vacancies'))
         user = request.user
         context = {
             'specialties': specialties,
