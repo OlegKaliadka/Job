@@ -79,7 +79,7 @@ class ApplicationView(View):
                     written_phone=data['written_phone'],
                     written_cover_letter=data["written_cover_letter"],
                     vacancy=vacancy,
-                    user=request.user                                  # If User exist!!!
+                    user=request.user
                 )
                 context = {
                     'vacancy': vacancy,
@@ -100,7 +100,7 @@ class CompanyStartView(View):
 class MyCompanyView(View):
 
     def get(self, request):
-        if len(Company.objects.filter(owner=request.user)) == 0:        # Null is object?
+        if len(Company.objects.filter(owner=request.user)) == 0:
             return redirect('/mycompany/letsstart/')
         else:
             form = CompanyForm(
@@ -220,7 +220,7 @@ class VacancyEditView(View):
 class ResumeStartView(View):
 
     def get(self, request):
-        if len(Resume.objects.filter(user=request.user)) != 0:        # Null is object?
+        if len(Resume.objects.filter(user=request.user)) != 0:
             return redirect('/myresume/')
         context = {}
         return render(request, 'resume-create.html', context=context)
@@ -229,7 +229,7 @@ class ResumeStartView(View):
 class ResumeCreateView(View):
 
     def get(self, request):
-        if len(Resume.objects.filter(user=request.user)) != 0:        # Null is object?
+        if len(Resume.objects.filter(user=request.user)) != 0:
             return redirect('/myresume/')
         context = {
             'form': ResumeForm,
@@ -259,7 +259,7 @@ class ResumeCreateView(View):
 class ResumeView(View):
 
     def get(self, request):
-        if len(Resume.objects.filter(user=request.user)) == 0:        # Null is object?
+        if len(Resume.objects.filter(user=request.user)) == 0:
             return redirect('/myresume/letsstart/')
         else:
             form = ResumeForm(
