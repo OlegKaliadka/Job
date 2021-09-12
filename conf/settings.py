@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
+import django_heroku
 
 from pathlib import Path
 
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*b8&3xu*523h4^x(qsm7h$z##@uj2r=v47qvz%y3#yq$$wi6gs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['senior-job.herokuapp.com']
 
 
 # Application definition
@@ -80,11 +82,11 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'job_db',
-        'USER': 'oleg',
-        'PASSWORD': '5432',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'dceds2elqvjd31',
+        'USER': 'sadgdbssfyzuyr',
+        'PASSWORD': '27ec456db452a21feec83e865e86a73bf6ab65165c5bd6d815609c30275d45c0',
+        'HOST': 'ec2-52-17-1-206.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -125,7 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+django_heroku.settings(locals())
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
